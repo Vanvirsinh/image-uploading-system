@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Upload Images to Server</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="modal-background"></div>
+
+    <!-- Upload Image Modal -->
+    <div id="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Upload Images</h3>
+                <span id="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="select-div">
+                    <input type="file" id="file" name="image" multiple="multiple"
+                        accept="image/jpeg, image/png, image/jpg">
+                    <p>Drag and drop images here to Upload or <span>Browse</span>.</p>
+                    <small>Only upload JPG, GIF or PNG files.</small>
+                </div>
+                <div class="image-preview">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <form action="/upload" method="post" id="upload">
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main -->
+    <section class="container">
+        <div>
+            <div class="main-header">
+                <h1>Upload Images to Server</h1>
+                <button id="addImages" type="button">Add Images</button>
+            </div>
+
+            <!-- Image Container -->
+            <div class="images-parent">
+                <div class="image-container">
+                </div>
+            </div>
+
+            <div class="delete-section">
+                <p>To delete image, click on particular one to select.</p>
+                <form action="/delete" id="delete">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+
+            <footer>
+                <p>Created with ❤️ by codemafias.com for you.</p>
+            </footer>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script>
+        const myObject = JSON.parse('<%-JSON.stringify(images)%>');
+    </script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
